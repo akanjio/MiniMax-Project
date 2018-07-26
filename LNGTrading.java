@@ -9,11 +9,11 @@ public class LNGTrading {
 
         //Get the price of LNG for a specific date using IpriceCurve interface
         IPriceCurve priceCurve1 = new PriceCurve();
-        double buyPrice = priceCurve1.getPrice("25/07/2018");
+        double buyPrice = priceCurve1.getPrice(sdf.parse("2018-25-07"));
 
         //Get the price of LNG for a specific date
         IPriceCurve priceCurve2 = new PriceCurve();
-        double sellPrice = priceCurve2.getPrice("31/07/2018");
+        double sellPrice = priceCurve2.getPrice(sdf.parse("2018-07-31"));
 
         //create new clients and assign roles as either buyer or seller
         Client shell1 = new Client("Shell", "SH5677LL", "seller");
@@ -33,7 +33,7 @@ public class LNGTrading {
         contract1.setPurchaseDate("26/07/2018");
         contract1.setPurchasePrice(buyPrice);
         contract1.setLoadVolume(1000);
-        contract1.setSellDate("25/08/2018");
+        contract1.setSellDate(sdf.parse("2018-08-25"));
         contract1.setDischargeVolume(700);
         contract1.setSellPrice(sellPrice);
       

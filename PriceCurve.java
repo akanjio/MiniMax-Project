@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+
 public class PriceCurve implements IPriceCurve{
     public double getPrice(Date date){
         //return some value from a pricing index
